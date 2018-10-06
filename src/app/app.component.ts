@@ -3,6 +3,10 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+//ngrx setup
+// import { Store } from '@ngrx/store';
+// import { Observable } from 'rxjs/Observable';
+
 import { TabsPage } from '../pages/tabs/tabs';
 
 @Component({

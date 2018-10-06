@@ -11,6 +11,11 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+//ngrx imports
+import { StoreModule } from '@ngrx/store';
+import { ROOT_REDUCER } from './reducers/reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -21,7 +26,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    StoreModule.forRoot(ROOT_REDUCER),
+    StoreDevtoolsModule.instrument({ maxAge: 10 })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
