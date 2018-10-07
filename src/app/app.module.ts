@@ -3,9 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
+import { UserFeedPage } from '../pages/userFeed/userFeed';
+import { SearchPage } from '../pages/search/search';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -19,9 +18,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
+    UserFeedPage,
+    SearchPage,
     TabsPage
   ],
   imports: [
@@ -33,9 +31,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
+    UserFeedPage,
+    SearchPage,
     TabsPage
   ],
   providers: [
