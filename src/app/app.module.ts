@@ -1,6 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { HttpClientModule } from '@angular/common/http';
 import { MyApp } from './app.component';
 
 import { UserFeedPage } from '../pages/userFeed/userFeed';
@@ -14,6 +15,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StoreModule } from '@ngrx/store';
 import { ROOT_REDUCER } from './reducers/reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { RestProvider } from '../providers/rest/rest';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
     StoreModule.forRoot(ROOT_REDUCER),
     StoreDevtoolsModule.instrument({ maxAge: 10 })
@@ -38,7 +41,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RestProvider
   ]
 })
 export class AppModule {}
